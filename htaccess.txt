@@ -16,19 +16,3 @@ RewriteCond %{HTTP_USER_AGENT} !^.*iPad.*$
 #-------------
 RewriteCond %{HTTP_USER_AGENT} !macintosh [NC] #*SEE NOTE BELOW
 RewriteRule ^(.*)$ http://mobile.delcoursolutions.com [L,R=302]
-
-
-# Video Support
-AddType video/ogg .ogv
-AddType video/mp4 .mp4
-AddType video/webm .webm
-
-# Blog Redirects
-RewriteEngine On
-RewriteRule blog/post-([0-9]+) /blog/index.php?id=$1
-RewriteRule blog/page-([0-9]+) /blog/index.php?page=$1
-RewriteRule blog/type-([a-zA-Z]+) /blog/index.php?type=$1
-RewriteRule blog/tag-(\S+) /blog/index.php?tag=$1
-RewriteRule blog/search-(\S+) /blog/index.php?search=$1
-RewriteRule blog/refresh /blog/index.php?refresh=1
-RewriteRule blog/refresh-all /blog/index.php?refresh=all
